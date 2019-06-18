@@ -1,13 +1,10 @@
-const http = require ('http'); 
+var http = require('http');
 
-const server = http.createServer(function (request, response){
-    console.log("recieved" + request.method + "request for" + request.url);
+http.createServer(function (req, res) {
+    res.writeHead(200, {'Content-type': 'text/plain'});
+    res.end('Hello World')
+})
 
-    response.writeHead(200, {'Content-Type': 'text/plain'});
+.listen(8080, '127.0.0.1');
 
-    response.end("Hello World");
-});
-
-server.listen(8080, 'localhost', null, function(){
-    console.log("server is listening on localhost:8080")
-});
+console.log('Server is running at http://127.0.0.1:8080/');
