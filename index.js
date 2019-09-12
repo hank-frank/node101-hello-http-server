@@ -5,6 +5,6 @@ http.createServer(function (req, res) {
     res.end('Hello World')
 })
 
-.listen(8080, '127.0.0.1');
-
-console.log('Server is running at http://127.0.0.1:8080/');
+.listen(8080, 'localhost', null, function() {
+    console.log('Server is listening on localhost:8080');
+});
